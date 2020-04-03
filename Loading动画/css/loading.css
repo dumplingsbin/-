@@ -1,0 +1,64 @@
+body {
+	margin: 0;
+	padding: 0;
+	background-color: #34495e;
+	height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.loading {
+	position: relative;
+	width: 200px;
+	height: 200px;
+ 	box-sizing: border-box;
+	border-radius: 50%;
+	/* 不需要背景，边框弯曲 */
+	border-top: 10px solid #e74c3c;
+	animation: a1 2s linear infinite;
+}
+
+.loading::before, 
+.loading::after {
+	content: '';
+	width: 200px;
+	height: 200px;
+	position: absolute;
+	left: 0;
+	top: -10px;
+	border-radius: 50%;
+}
+
+.loading::before {
+	border-top: 10px solid #e67e22;
+	transform: rotate(120deg);
+}
+
+.loading::after {
+	border-top: 10px solid #3498db;
+	transform: rotate(240deg);
+}
+
+.loading span {
+	position: absolute;
+	width: 200px;
+	height: 200px;
+	color: #fff;
+	text-align: center;
+	line-height: 200px;
+	animation: a2 2s linear infinite;
+}
+
+@keyframes a1{
+	to{ 
+		transform: rotate(360deg);
+	}
+}
+
+@keyframes a2{
+	to{
+		/* 抵消掉父元素的顺时针旋转 */
+		transform: rotate(-360deg);
+	}
+}
