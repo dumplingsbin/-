@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+</head>
+
+<body>
+    <div class="card">
+        <div class="image">
+            <img src="./112.jpg" alt="">
+        </div>
+        <div class="content">
+            <div class="title">卡片悬停效果</div>
+            <div class="sub-title">HTML AND CSS</div>
+            <div class="bottom">
+                <p>The company I work for went through a rough patch.We are in one of the most severe recessions in
+                    modern
+                    times.A good relationship involves concern and sensitivity for each other's feelings.</p>
+                <button>Read More</button>
+            </div>
+        </div>
+    </div>
+    <script>
+        $(".card").hover(function () {
+            if ($(this).hasClass("active")) {
+                $('.card .bottom').slideUp(function () {
+                    $('.card').removeClass("active")
+                })
+            } else {
+                $('.card').addClass("active")
+                $('.card .bottom').stop().slideDown();
+            }
+        })
+    </script>
+</body>
+
+</html>
