@@ -1,0 +1,66 @@
+html,
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #34495e;
+}
+
+.box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+    padding: 40px;
+    text-align: center;
+    background-color: #191919;
+}
+
+.box h1 {
+    font-size: 500;
+    color: white;
+}
+
+.box input[type="text"],
+.box input[type="password"] {
+    width: 200px;
+    height: 50px;
+    border: 2px solid #2ecc71;
+    background: #191919;
+    color: white;
+    text-align: center;
+    border-radius: 30px;
+    margin: 10px 0;
+    font-size: 20px;
+    transition: 0.25s;
+    /*获取焦点时 去掉蓝色边框*/
+    outline: none;
+}
+
+.box input[type="text"]:focus,
+.box input[type="password"]:focus {
+    border-color: #3498db;
+    width: 280px;
+}
+
+.box input[type="submit"] {
+    width: 120px;
+    height: 50px;
+    border-radius: 30px;
+    font-size: 20px;
+    font-weight: 600;
+    border: 2px solid #3498db;
+    background: none;
+    color: white;
+    margin: 5px 0;
+}
+
+.box input[type="submit"]:hover {
+    background-color: #3498db;
+}
+
+/* 解决goolge浏览器，input输入历史文本造成的样式变化问题  */
+input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0px 1000px #191919 inset;
+    -webkit-text-fill-color: white;
+}
